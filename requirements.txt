@@ -1,0 +1,15 @@
+# Core dependencies; use the notebook setup cell for matching pyg-lib wheels.
+# Torch is typically preinstalled in Colab.
+torch
+torch-geometric>=2.8.0
+numpy
+pandas
+scipy
+scikit-learn
+lightgbm
+xgboost
+catboost
+matplotlib
+tqdm
+PyYAML
+ipykernel
