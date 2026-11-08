@@ -4,7 +4,7 @@ A reproducible notebook comparing graph neural networks, graph-derived features,
 
 ## Task and dataset
 
-Each node is a road segment; edges describe permitted transitions between segments. We predict the road segment's traffic speed using tabular node attributes and graph structure. Experiments use GraphLand's **Random High (`RH`)** split (50% train / 25% validation / 25% test) in a **transductive** setting. The notebook converts the graph to an undirected representation for feature construction and message passing.
+Each node is a road segment; edges describe permitted transitions between segments. We predict the road segment's traffic speed using tabular node attributes and graph structure. Experiments use GraphLand's **`RH`** split (50% train / 25% validation / 25% test) in a **transductive** setting. The notebook converts the graph to an undirected representation for feature construction and message passing.
 
 Dataset source: [GraphLand on Zenodo](https://zenodo.org/records/16895532). The data are downloaded by the notebook via PyTorch Geometric; **data files are not distributed in this repository**. Follow the source dataset's attribution and licensing requirements if redistributing any data.
 
@@ -13,7 +13,7 @@ Dataset source: [GraphLand on Zenodo](https://zenodo.org/records/16895532). The 
 - **Graph Transformer** baseline, with and without DeepWalk-style structural embeddings learned via PyG `Node2Vec(p=q=1)`.
 - **MLP** baselines on tabular features, DeepWalk embeddings and engineered graph statistics.
 - **Neighborhood feature engineering:** one-hop mean/min/max/degree features, plus means over exact two- and three-hop neighborhoods.
-- **Target-based graph features:** labeled-neighbor target means, counts and missing indicators by hop. The final method uses 5-fold **out-of-fold (OOF)** target encoding for training nodes and only training labels for validation/test nodes.
+- **Target-based graph features:** labeled-neighbor target means, counts and missing indicators by hop. The final method uses 5-fold **OOF** target encoding for training nodes and only training labels for validation/test nodes.
 - **Gradient boosting:** LightGBM feature-group ablations and a comparison with XGBoost and CatBoost.
 
 ## Results
